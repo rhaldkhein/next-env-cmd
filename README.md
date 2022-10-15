@@ -23,7 +23,7 @@ Use [Next.js Environment Variables](https://nextjs.org/docs/basic-features/envir
 ```
 
 And then in `package.json`.
-```json
+```js
 {
   "script": {
     // defaults to load development env vars
