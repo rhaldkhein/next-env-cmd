@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import { program } from 'commander'
 import spawn from 'cross-spawn'
 import { loadEnvConfig, Env } from '@next/env'

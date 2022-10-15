@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/rhaldkhein/next-env-cmd#readme",
   "main": "src/index.js",
-  "types": "src/index.d.ts",
   "bin": {
     "next-env-cmd": "src/index.js",
     "nexenv": "src/index.js"
