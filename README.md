@@ -2,7 +2,7 @@
 
 CLI command for loading .env files using [`@next/env`](https://nextjs.org/docs/basic-features/environment-variables) and spawn process using [`cross-spawn`](https://github.com/moxystudio/node-cross-spawn) modules.
 
-**Note:** This command can be used without installing Next.js framework.
+**Note:** This is a standalone command and can be used without installing Next.js framework.
 
 ### Install
 
