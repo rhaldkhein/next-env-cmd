@@ -8,6 +8,7 @@ import { name, version, description } from '../package.json'
 interface Options {
   dir: string
   parent?: string | null
+  production?: boolean
 }
 
 const fullDescription = `${description}.
@@ -32,6 +33,10 @@ program
     '-p, --parent [path]',
     'Parent env directory path to be merged as defaults'
   )
+  .option(
+    '--production',
+    'Forcely load production env files'
+  )
   .allowUnknownOption(true)
   .parse(process.argv)
 
@@ -39,9 +44,12 @@ program
 const opts = program.opts<Options>()
 const args = program.args
 const pwd = process.env.PWD || ''
-const dev = (process.env.NODE_ENV || 'development') === 'development'
+let dev = (process.env.NODE_ENV || 'development') === 'development'
 let mainEnv: Env = {}
 let parentEnv: Env = {}
+
+// override to load production env files
+if (opts.production) dev = false
 
 // load parent env directory first
 if (opts.parent) {
