@@ -70,7 +70,11 @@ mainEnv = loadEnvConfig(
 // combine variables
 Object.assign(
   process.env,
-  { ...parentEnv, ...mainEnv }
+  {
+    NODE_ENV: process.env.NODE_ENV || (dev ? 'development' : 'production'),
+    ...parentEnv,
+    ...mainEnv
+  }
 )
 
 // spawn command and gracefully exit process
