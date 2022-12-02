@@ -79,5 +79,5 @@ Object.assign(
 
 // spawn command and gracefully exit process
 const ps = spawn(args[0], args.slice(1), { stdio: 'inherit' })
-ps.on('exit', (status) => process.exit(status || undefined))
+ps.on('close', (status) => process.exit(status || undefined))
 process.on('SIGTERM', () => ps.kill())
